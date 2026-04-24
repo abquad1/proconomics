@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local"; 
 import "./globals.css";
 import Navbar from "./components/navbar";
-import { ToastContainer } from 'react-toastify';
 import GoogleAnalytics from "./components/google-analytics";
+import ToastProvider from "./components/toast-provider";
 
 const satoshi = localFont({
   src: [
@@ -33,7 +33,7 @@ export default function RootLayout({
       <GoogleAnalytics />
         <Navbar/>
         {children}
-        <ToastContainer position="bottom-right" autoClose={3000} />
+        <ToastProvider/>
       </body>
     </html>
   );

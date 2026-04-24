@@ -21,6 +21,7 @@ export default function GoogleAnalytics() {
           gtag('config', '${GA_ID}');
         `}
       </Script>
+      
     </>
   )
 }
