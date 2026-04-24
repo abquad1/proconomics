@@ -76,6 +76,10 @@ function CTA() {
                 </span>
                 ))}
             </div>
+
+            <p className="pt-4 italic">
+            Build, analyze, and validate project ROI using a structured financial model.
+            </p>
         </section>
     </main>
   )

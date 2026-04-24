@@ -15,53 +15,54 @@ function Hero() {
     <main className='w-full relative'>
         <section className='w-full text-center py-8 flex flex-col gap-4'>
 
-        <div className="absolute inset-0 grid grid-cols-8 gap-2 opacity-40 pointer-events-none">
-      {Array.from({ length: 24 }).map((_, i) => (
-        <span
-          key={i}
-          className={`rounded-xl ${colors[i % colors.length]}`}
-        />
-      ))}
-    </div>
-
-            <div className='w-full flex items-center justify-center'>
-            <div className="flex items-center justify-center gap-2 bg-[#6495ED]/10 border border-primary rounded-full px-4 py-2 w-fit">
-            {breadcrumbs.map((crumb, index) => (
-                    <div key={crumb.name} className="flex items-center gap-2">
-                    <Link
-                        href={crumb.href}
-                        className={`text-md font-medium tracking-widest transition-colors hover:text-blue-500 ${
-                        index === breadcrumbs.length - 1
-                            ? 'text-primary'
-                            : 'text-gray-400'
-                        }`}
-                    >
-                        {crumb.name}
-                    </Link>
-
-                    {/* Separator - hide after last item */}
-                    {index < breadcrumbs.length - 1 && (
-                        <span className="text-[#212121] text-md ">/</span>
-                    )}
-                    </div>
+            {/* hero background */}
+            <section className="absolute inset-0 grid grid-cols-4 md:grid-cols-8 gap-2 opacity-40 pointer-events-none">
+                {Array.from({ length: 24 }).map((_, i) => (
+                    <span
+                    key={i}
+                    className={`rounded-xl ${colors[i % colors.length]}`}
+                    />
                 ))}
-            </div>
-            </div>
+            </section>
 
-            <h1 className='text-7xl'>
+            <section className='w-full flex items-center justify-center px-12 md:px-auto'>
+                <div className="flex items-center justify-center gap-2 bg-[#6495ED]/10 border border-primary rounded-full px-4 py-2 w-fit">
+                    {breadcrumbs.map((crumb, index) => (
+                        <div key={crumb.name} className="flex items-center gap-2">
+                        <Link
+                            href={crumb.href}
+                            className={`text-xs md:text-md font-medium tracking-widest transition-colors hover:text-blue-500 ${
+                            index === breadcrumbs.length - 1
+                                ? 'text-primary'
+                                : 'text-gray-400'
+                            }`}
+                        >
+                            {crumb.name}
+                        </Link>
+
+                        {/* Separator - hide after last item */}
+                        {index < breadcrumbs.length - 1 && (
+                            <span className="text-[#212121] text-md ">/</span>
+                        )}
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <h1 className='text-5xl md:text-7xl px-6'>
                 Your <span className='text-primary'>Business</span> <span className='text-secondary'>Case</span> Should     Survive Long After the Meeting Ends
             </h1>
 
-            <p className="text-2xl px-12">
-            Proconomics Model Builder gives finance teams and project sponsors a structured, assumption-backed financial model that holds up under executive scrutiny, built in minutes, not days.
+            <p className="text-2xl px-4 md:px-12">
+                Proconomics Model Builder gives finance teams and project sponsors a structured, assumption-backed financial model that holds up under executive scrutiny, built in minutes, not days.
             </p>
 
-            <p className='text-2xl px-16'>
-            Build structured project financial models that define costs, forecast ROI,
-            and hold up under executive scrutiny.
-          </p>
+            <p className='text-2xl px-4 md:px-16'>
+                Build structured project financial models that define costs, forecast ROI,
+                and hold up under executive scrutiny.
+            </p>
 
-            <section className='flex flex-row items-center w-full justify-center py-4 gap-8'>
+            <section className='flex flex-col md:flex-row items-center w-full justify-center py-4 gap-8'>
                 <Link href="/signup" className='flex items-center gap-4 bg-primary px-8 py-4 text-[#ffffff] rounded-[84px]'>
                     Build your first model
                     
@@ -87,14 +88,14 @@ function Hero() {
             </section>
 
             <section aria-label="About Model Builder">
-                <p className='text-2xl px-16'>
+                <h2 className='text-2xl px-4 md:px-16'>
                     Proconomics Model Builder is a project financial modeling tool designed to
                     help teams build business cases, analyze costs and benefits, and evaluate
                     return on investment before execution. It replaces fragmented spreadsheets
                     with a structured system that keeps every model clear, consistent, and
                     decision-ready.
-                </p>
-        </section>
+                </h2>
+            </section>
         </section>
     </main>
   )
