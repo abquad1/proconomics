@@ -63,14 +63,16 @@ function Hero() {
             </p>
 
             <section className='flex flex-col md:flex-row items-center w-full justify-center py-4 gap-8'>
-                <Link href="/signup" className='flex items-center gap-4 bg-primary px-8 py-4 text-[#ffffff] rounded-[84px]'>
+                <Link href="/signup" className='flex items-center gap-4 bg-primary px-8 py-4 text-[#ffffff] rounded-full
+                hover:bg-primary/80 hover:text-[#ffffff]'>
                     Build your first model
                     
                     <Image alt="model icon" src="/images/model-icon.png" height={40} width={40}></Image>
                     
                 </Link>
 
-                <Link href="/demo" className='flex items-center gap-4 text-primary  px-8 py-4 border border-primary rounded-[84px]'>
+                <Link href="/demo" className='flex items-center gap-4 text-primary  px-8 py-4 border border-primary 
+                rounded-full hover:bg-primary/80 hover:text-[#ffffff]'>
                     Book a demo
                     
                     <Image alt="demo icon" src="/images/demo-icon.png" height={40} width={40}></Image>

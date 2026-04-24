@@ -53,10 +53,10 @@ const [open,setOpen] = useState(false)
             </ul>
           
             <section className="flex flex-col gap-2 text-xl font-bold px-4 py-2">
-                <button className='px-4 py-2 rounded-md cursor-pointer text-primary relative z-10' >
+                <button className='px-4 py-2 rounded-md cursor-pointer text-primary relative z-10 ' >
                   Sign In
                 </button>
-                <button className='px-4 py-2 rounded-4xl relative z-10 cursor-pointer bg-primary text-[#ffffff]'>
+                <button className='px-4 py-2 rounded-4xl relative z-10 cursor-pointer bg-primary text-[#ffffff] '>
                   Get Started
                 </button>
             </section>  
@@ -74,11 +74,11 @@ const [open,setOpen] = useState(false)
         </section>
 
             {/* desktop buttons */}
-        <section className="hidden md:block text-xl font-bold">
-            <button className='px-4 py-2 rounded-md text-primary relative z-10' >
+        <section className="hidden md:flex text-xl font-bold gap-2 ">
+            <button className='px-4 py-2 rounded-full text-primary relative z-10 hover:bg-primary/70 hover:text-[#ffffff]' >
               Sign In
             </button>
-            <button className='px-4 py-2 rounded-4xl relative z-10 bg-primary text-[#ffffff]'>
+            <button className='px-4 py-2 rounded-full relative z-10 bg-primary text-[#ffffff] hover:bg-primary/70 hover:text-[#ffffff]'>
               Get Started
             </button>
         </section>

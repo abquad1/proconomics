@@ -59,7 +59,8 @@ function Faq() {
                     Can't find the answer you are looking for? Kindly check our complete list of FAQs
                     </p>
 
-                    <button className="flex items-center gap-4 rounded-full text-[#ffffff] cursor-pointer bg-[#6495ED] px-4 py-3 w-fit">
+                    <button className="flex items-center gap-4 rounded-full text-[#ffffff] cursor-pointer bg-[#6495ED] px-4 py-3 w-fit
+                    hover:bg-primary/80 hover:text-[#ffffff]">
                         View Complete FAQs 
                         <FaArrowRight size={15} />
                     </button>
