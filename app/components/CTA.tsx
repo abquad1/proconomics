@@ -11,6 +11,15 @@ const badges = [
   ];
   
 function CTA() {
+    const trackEvent = (eventName: string) => {
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          (window as any).gtag('event', eventName, {
+            event_category: 'engagement',
+            event_label: 'Model Builder Page',
+          })
+        }
+      }
+
   return (
     <main className='w-full pt-12'>
         <section
@@ -53,6 +62,7 @@ function CTA() {
                     style={{
                         background: "linear-gradient(135deg, #6495ED, #a78bfa)"
                     }}
+                    onClick={() => trackEvent('cta_click_build_model')}
                 >
                     Start building for free 
                     <FaArrowRight size={15} />
@@ -78,7 +88,7 @@ function CTA() {
             </div>
 
             <p className="pt-4 italic">
-            Build, analyze, and validate project ROI using a structured financial model.
+                Build, analyze, and validate project ROI using a structured financial model.
             </p>
         </section>
     </main>

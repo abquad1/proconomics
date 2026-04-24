@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/navbar";
 import { ToastContainer } from 'react-toastify';
+import GoogleAnalytics from "./components/google-analytics";
 
 const satoshi = localFont({
   src: [
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${satoshi.className} antialiased`}>
+      <GoogleAnalytics />
         <Navbar/>
         {children}
         <ToastContainer position="bottom-right" autoClose={3000} />
