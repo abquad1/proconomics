@@ -26,15 +26,14 @@ function Testimonial() {
 
     const [current, setCurrent] = useState(0);
 
-    // Show just two cards on the screen width
-    const visible = testimonials.slice(current, current + 2);
-  
+    const desktopVisibility = testimonials.slice(current, current + 2);
+    const mobileVisibility = testimonials.slice(current, current + 1); 
     const prev = () => {
       setCurrent((prev) => Math.max(prev - 1, 0));
     };
   
     const next = () => {
-      setCurrent((prev) => Math.min(prev + 1, testimonials.length - 2));
+      setCurrent((prev) => Math.min(prev + 1, testimonials.length - 1));
     };
     
   return (
@@ -51,35 +50,64 @@ function Testimonial() {
             </h2>
 
             {/* Cards */}
-            <div className="flex flex-col md:flex-row gap-4 mt-8">
-                {visible.map((t) => (
-                <div
-                    key={t.id}
-                    className="flex-1 bg-white rounded-2xl border-10 border-[#EEF4FF] p-8 flex flex-col justify-between"
-                >
-                    <span className="text-4xl text-[#212121]">
+            <div className="flex flex-row gap-4 mt-8">
+               {/* Mobile - show 1 card */}
+                <div className="flex w-full md:hidden">
+                    {mobileVisibility.map((t) => (
+                    <div
+                        key={t.id}
+                        className="flex-1 bg-white rounded-2xl border-10 border-[#EEF4FF] p-8 flex flex-col justify-between"
+                    >
+                        <span className="text-4xl text-[#212121]">
                         <FaQuoteLeft size={10} />
-                    </span>
-
-                    <p className="text-[#212121] mt-4 mb-8 text-lg leading-relaxed">
+                        </span>
+                        <p className="text-[#212121] mt-4 mb-8 text-lg leading-relaxed">
                         {t.quote}
-                    </p>
-
-                    <div className="flex items-center gap-4">
+                        </p>
+                        <div className="flex items-center gap-4">
                         <img
                             src={t.image}
                             alt={t.name}
                             className="w-12 h-12 rounded-full object-cover"
                         />
-
                         <div>
                             <p className="font-semibold text-xl text-[#212121]">{t.name}</p>
                             <p className="text-lg text-[#212121]">{t.title}</p>
                         </div>
+                        </div>
                     </div>
+                    ))}
                 </div>
-                ))}
-            </div>
+
+                {/* Desktop - show 2 cards */}
+                <div className="hidden md:flex w-full gap-4">
+                    {desktopVisibility.map((t) => (
+                    <div
+                        key={t.id}
+                        className="flex-1 bg-white rounded-2xl border-10 border-[#EEF4FF] p-8 flex flex-col justify-between"
+                    >
+                        <span className="text-4xl text-[#212121]">
+                        <FaQuoteLeft size={10} />
+                        </span>
+                        <p className="text-[#212121] mt-4 mb-8 text-lg leading-relaxed">
+                        {t.quote}
+                        </p>
+                        <div className="flex items-center gap-4">
+                        <img
+                            src={t.image}
+                            alt={t.name}
+                            className="w-12 h-12 rounded-full object-cover"
+                        />
+                        <div>
+                            <p className="font-semibold text-xl text-[#212121]">{t.name}</p>
+                            <p className="text-lg text-[#212121]">{t.title}</p>
+                        </div>
+                        </div>
+                    </div>
+                    ))}
+                </div>
+                </div>
+            
 
             {/* Navigation arrows */}
             <div className="flex justify-center gap-4 mt-8 ">
@@ -92,7 +120,7 @@ function Testimonial() {
                 </button>
                 <button
                 onClick={next}
-                disabled={current >= testimonials.length - 2}
+                disabled={current >= testimonials.length - 1}
                 className="w-10 h-10 rounded-full border border-[#212121] flex items-center justify-center hover:bg-gray-100 "
                 >
                     <SlArrowRight size={12} />
