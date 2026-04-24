@@ -18,9 +18,9 @@ function Feature() {
           }}>
 
         <section className='w-full flex items-center justify-center '>
-            <h1 className="w-fit rounded-full px-4 text-3xl py-4 text-[#6495ED] bg-[#6495ED]/5 font-semibold  border border-[#D7E5FF] ">
+            <h2 className="w-fit rounded-full px-4 text-3xl py-4 text-[#6495ED] bg-[#6495ED]/5 font-semibold  border border-[#D7E5FF] ">
                 Feature Capabilities
-            </h1>
+            </h2>
         </section>
 
         <div className='px-4 md:px-12'>
