@@ -52,17 +52,18 @@ function Testimonial() {
             {/* Cards */}
             <div className="flex flex-row gap-4 mt-8">
                {/* Mobile - show 1 card */}
-                <div className="flex w-full md:hidden">
+                <div className="flex w-full md:hidden transition-transform duration-300 ease-in-out">
                     {mobileVisibility.map((t) => (
                     <div
                         key={t.id}
                         className="flex-1 bg-white rounded-2xl border-10 border-[#EEF4FF] p-8 flex flex-col justify-between"
                     >
                         <span className="text-4xl text-[#212121]">
-                        <FaQuoteLeft size={10} />
+                            <FaQuoteLeft size={10} />
                         </span>
+                        
                         <p className="text-[#212121] mt-4 mb-8 text-lg leading-relaxed">
-                        {t.quote}
+                            {t.quote}
                         </p>
                         <div className="flex items-center gap-4">
                         <img
