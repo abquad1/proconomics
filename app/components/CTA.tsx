@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import { FaArrowRight } from 'react-icons/fa';
 import { GoCheck } from "react-icons/go";
@@ -8,7 +9,7 @@ const badges = [
     "No credit card required", 
     "Setup in minutes",
     "Connect to Value Tracker on day one",
-  ];
+  ]; 
   
 function CTA() {
     const trackEvent = (eventName: string) => {
